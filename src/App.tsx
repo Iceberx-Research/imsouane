@@ -10,6 +10,7 @@ import NewPost from './pages/NewPost';
 import NicknameModal from './components/NicknameModal';
 import { NicknameProvider, useNickname } from './lib/nickname';
 import { useRealtimeSubscriptions } from './lib/realtime';
+import { Analytics } from '@vercel/analytics/react';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -47,6 +48,7 @@ function AppRoutes() {
         </Routes>
       </BrowserRouter>
       {showModal && <NicknameModal />}
+      <Analytics />
     </>
   );
 }
